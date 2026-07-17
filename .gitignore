@@ -1,15 +1,4 @@
 ## .NET build output
 bin/
 obj/
-
-## User-specific / local
-*.user
-appsettings.*.local.json
-
-## OS
-.DS_Store
-
-## IDE
-.vs/
-.idea/
-*.suo
+Migrations/

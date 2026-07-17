@@ -29,3 +29,231 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* ============================================================
+   Registro de Personas — estilos de la vista CRUD
+   ============================================================ */
+:root {
+  --rp-primary: #4f46e5;
+  --rp-primary-dark: #4338ca;
+  --rp-bg: #f5f6fa;
+}
+
+body {
+  background-color: var(--rp-bg);
+}
+
+.personas-page {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin: 0;
+  color: #1f2430;
+}
+
+.page-subtitle {
+  margin: 0.15rem 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.btn-nueva {
+  border-radius: 999px;
+  padding: 0.5rem 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+}
+
+.btn-nueva .ico {
+  font-weight: 700;
+  margin-right: 0.15rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--rp-primary);
+  --bs-btn-border-color: var(--rp-primary);
+  --bs-btn-hover-bg: var(--rp-primary-dark);
+  --bs-btn-hover-border-color: var(--rp-primary-dark);
+  --bs-btn-active-bg: var(--rp-primary-dark);
+  --bs-btn-active-border-color: var(--rp-primary-dark);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.search-box {
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 420px;
+}
+
+.search-box .search-ico {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.search-box .form-control {
+  padding-left: 2.4rem;
+  border-radius: 999px;
+}
+
+.badge-total {
+  background: #eef0f7;
+  color: #4b5563;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tabla-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(31, 36, 48, 0.06);
+  overflow: hidden;
+}
+
+.tabla-card .table {
+  margin-bottom: 0;
+}
+
+.tabla-card thead th {
+  background: #f8f9fc;
+  color: #6b7280;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eceef4;
+  padding: 0.85rem 1rem;
+  white-space: nowrap;
+}
+
+.tabla-card tbody td {
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f2f7;
+}
+
+.tabla-card tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-card tbody tr:hover {
+  background-color: #fafaff;
+}
+
+.badge-sexo {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.sexo-m { background: #e0edff; color: #1d4ed8; }
+.sexo-f { background: #fde4f2; color: #be185d; }
+.sexo-o { background: #e7e9f2; color: #4b5563; }
+
+.estado-vacio {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.estado-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Modales con esquinas suaves */
+.modal-content {
+  border: none;
+  border-radius: 16px;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: #f1f2f7;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.form-control, .form-select {
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+}
+
+/* ---------- Responsive: tabla en formato "tarjeta" en móvil ---------- */
+@media (max-width: 640px) {
+  .page-title { font-size: 1.35rem; }
+
+  .tabla-card thead { display: none; }
+
+  .tabla-card table,
+  .tabla-card tbody,
+  .tabla-card tr,
+  .tabla-card td {
+    display: block;
+    width: 100%;
+  }
+
+  .tabla-card tbody tr {
+    padding: 0.5rem 0.9rem;
+    border-bottom: 8px solid var(--rp-bg);
+  }
+
+  .tabla-card tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    border: none;
+    text-align: right;
+  }
+
+  .tabla-card tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .tabla-card tbody td.text-end {
+    justify-content: flex-end;
+  }
+
+  .tabla-card tbody td[data-label="Acciones"]::before {
+    content: "";
+  }
+}

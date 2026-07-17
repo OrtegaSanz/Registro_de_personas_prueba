@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj": {}
+    "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj": {}
   },
   "projects": {
-    "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj": {
+    "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj",
+        "projectUniqueName": "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj",
         "projectName": "Registro_de_personas_prueba",
-        "projectPath": "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj",
+        "projectPath": "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba.csproj",
         "packagesPath": "/Users/yayo/.nuget/packages/",
-        "outputPath": "/Users/yayo/Desktop/Registro_de_personas_prueba/Registro_de_personas_prueba/obj/",
+        "outputPath": "/Users/yayo/Desktop/Registro_de_personas_prueba/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/yayo/.nuget/NuGet/NuGet.Config"
@@ -45,6 +45,18 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.10, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
